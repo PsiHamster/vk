@@ -1791,5 +1791,16 @@ namespace VkNet.Utils
 		{
 			return response?._token == null || !response._token.HasValues ? null : MessageKeyboardButtonAction.FromJson(response: response);
 		}
+
+		/// <summary>
+		/// Преобразовать из VkResponse
+		/// </summary>
+		/// <param name="response"> Ответ. </param>
+		/// <returns>
+		/// Результат преобразования.
+		/// </returns>
+		public static implicit operator ConversationAction(VkResponse response) {
+			return response?._token == null || !response._token.HasValues ? null : ConversationAction.FromJson(response: response);
+		}
 	}
 }
