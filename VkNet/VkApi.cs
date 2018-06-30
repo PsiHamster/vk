@@ -49,7 +49,7 @@ namespace VkNet
 		/// <summary>
 		/// Версия API vk.com.
 		/// </summary>
-		public const string VkApiVersion = "5.78";
+		public const string VkApiVersion = "5.80";
 
 		/// <summary>
 		/// The expire timer lock

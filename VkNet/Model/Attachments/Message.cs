@@ -1,6 +1,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using VkNet.Enums;
@@ -86,6 +87,7 @@ namespace VkNet.Model
 		/// <summary>
 		/// Текст сообщения.
 		/// </summary>
+		[CanBeNull]
 		public string Text { get; set; }
 
 		/// <summary>
@@ -93,7 +95,7 @@ namespace VkNet.Model
 		/// исходящих сообщений.
 		/// </summary>
 		[JsonProperty(propertyName: "random_id")]
-		public long RandomId { get; set; }
+		public long? RandomId { get; set; }
 
 		/// <summary>
 		/// тип сообщения (0 — полученное, 1 — отправленное, не возвращается для
@@ -105,36 +107,42 @@ namespace VkNet.Model
 		/// <summary>
 		/// Массив медиа-вложений (прикреплений).
 		/// </summary>
+		[CanBeNull]
 		public ReadOnlyCollection<Attachment> Attachments { get; set; }
 
 		/// <summary>
 		/// Массив пересланных сообщений (если есть).
 		/// </summary>
+		[CanBeNull]
 		public ReadOnlyCollection<Message> ForwardedMessages { get; set; }
 
 		/// <summary>
 		/// Является ли сообщение важным.
 		/// </summary>
-		public bool Important { get; set; }
+		public bool? Important { get; set; }
 
 		/// <summary>
 		/// Гео данные.
 		/// </summary>
+		[CanBeNull]
 		public Geo Geo { get; set; }
 
 		/// <summary>
 		/// сервисное поле для сообщений ботам (полезная нагрузка).
 		/// </summary>
+		[CanBeNull]
 		public string Payload { get; set; }
 
 		/// <summary>
 		/// Клавиатура, присланная ботом
 		/// </summary>
+		[CanBeNull]
 		public MessageKeyboard Keyboard { get; set; }
 
 		/// <summary>
 		/// информация о сервиинформация о сервисном действии с чатомсном действии с чатом
 		/// </summary>
+		[CanBeNull]
 		public ConversationAction Action { get; set; }
 
 		#endregion
@@ -151,6 +159,7 @@ namespace VkNet.Model
 
 		/// <summary>
 		/// </summary>
+		[CanBeNull]
 		[JsonProperty(propertyName: "update_time")]
 		public string UpdateTime { get; set; }
 
